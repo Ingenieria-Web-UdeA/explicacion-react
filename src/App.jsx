@@ -5,6 +5,8 @@ import { IndexPage } from 'pages';
 import IndexAdmin from 'pages/admin';
 import { Page2 } from 'pages/page2';
 import { Page3 } from 'pages/page3';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
   <BrowserRouter>
@@ -18,6 +20,7 @@ const App = () => (
         <Route path='/admin' element={<IndexAdmin />} />
       </Route>
     </Routes>
+    <ToastContainer />
   </BrowserRouter>
 );
 

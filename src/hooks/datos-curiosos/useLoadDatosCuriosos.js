@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -8,8 +9,9 @@ const useLoadDatosCuriosos = () => {
   useEffect(() => {
     const consultarDatosCuriosos = async () => {
       setLoading(true);
-      const response = await axios.get('https://catfact.ninja/facts');
-      const arrayOfFacts = response.data.data.map((fact) => fact.fact);
+      const response = await axios.get('http://localhost:5000/facts');
+      console.log(response);
+      const arrayOfFacts = response.data.facts.map((fact) => fact.description);
       setDatosCuriosos(arrayOfFacts);
       setLoading(false);
     };
